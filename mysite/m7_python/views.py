@@ -50,7 +50,7 @@ def profile(request):
         u_form = UserUpdateForm(request.POST,instance=request.user)
         if u_form.is_valid():
             u_form.save()
-            return HttpResponseRedirect()
+            return HttpResponseRedirect('/dashboard/')
     else:
         u_form = UserUpdateForm(instance=request.user.profile)
 
